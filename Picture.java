@@ -6,25 +6,60 @@
  *
  * This class was written as an early example for teaching Java with BlueJ.
  * 
- * @author  Michael Kšlling and David J. Barnes
- * @version 2016.02.29
+ * @author  Karen Stagg
+ * @version 2020.09.07
  */
 public class Picture
 {
-    private Square wall;
-    private Square window;
-    private Triangle roof;
+    private Square sandLot;
+    private Square netPost1;
+    private Square netPost2;
+    private Person player1;
+    private Person player2;
     private Circle sun;
-    private boolean drawn;
+    private Circle ball;
+    private Triangle topnet1;
+    private Triangle topnet2;
+    private Triangle topnet3;
+    private Triangle topnet4;
+    private Triangle topnet5;
+    private Triangle topnet6;
+    private Triangle botnet1;
+    private Triangle botnet2;
+    private Triangle botnet3;
+    private Triangle botnet4;
+    private Triangle botnet5;
+    private Triangle botnet6;
+    
+    // private Square window;
+    // private Triangle roof;
+    // private Circle sun;
+    // private boolean drawn;
 
     /**
      * Constructor for objects of class Picture
      */
     public Picture()
     {
-        wall = new Square();
-        window = new Square();
-        roof = new Triangle();  
+        sandLot = new Square();
+        netPost1 = new Square();
+        netPost2 = new Square();
+        player1 = new Person();
+        player2 = new Person();
+        ball = new Circle();
+        topnet1 = new Triangle();
+        topnet2 = new Triangle();
+        topnet3 = new Triangle();
+        topnet4 = new Triangle();
+        topnet5 = new Triangle();
+        topnet6 = new Triangle();
+        botnet1 = new Triangle();
+        botnet2 = new Triangle();
+        botnet3 = new Triangle();
+        botnet4 = new Triangle();
+        botnet5 = new Triangle();
+        botnet6 = new Triangle();
+        //roof = new Triangle();  
         sun = new Circle();
         drawn = false;
     }
