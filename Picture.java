@@ -12,6 +12,7 @@
 public class Picture
 {
     private Square sandLot;
+    private Square sky;
     private Square netPost1;
     private Square netPost2;
     private Person player1;
@@ -42,6 +43,7 @@ public class Picture
     public Picture()
     {
         sandLot = new Square();
+        sky = new Square();
         netPost1 = new Square();
         netPost2 = new Square();
         player1 = new Person();
@@ -70,28 +72,54 @@ public class Picture
     public void draw()
     {
         if(!drawn) {
-            wall.moveHorizontal(-140);
-            wall.moveVertical(20);
-            wall.changeSize(120);
-            wall.changeColor("blue");
-            wall.makeVisible();
             
-            window.changeColor("black");
-            window.moveHorizontal(-120);
-            window.moveVertical(40);
-            window.changeSize(40);
-            window.makeVisible();
-    
-            roof.changeSize(60, 180);
-            roof.moveHorizontal(20);
-            roof.moveVertical(-60);
-            roof.makeVisible();
-    
+            sandlot.moveHorizontal(-320);
+            sandLot.changeSize(550);
+            sandlot.changeColor("tan");
+            sandLot.makeVisible();
+            
+            sky.changeColor("skyblue");
+            sky.moveHorizontal(-340);
+            sky.moveVertical(-550);
+            sky.changeSize(550);
+            sky.makeVisible();
+            
             sun.changeColor("yellow");
             sun.moveHorizontal(100);
             sun.moveVertical(-40);
             sun.changeSize(80);
             sun.makeVisible();
+            
+            ball.changeColor ("magenta");
+            ball.moveHorizontal(15);
+            ball.moveVertical(-130);
+            ball.changeSize(18);
+            ball.makeVisible();
+            
+            netPost1.changeColor("white");
+            netPost1.moveHorizontal(-165);
+            netPost1.moveVertical(-55);
+            netPost1.changeSize(95);
+            netPost1.makeVisible();
+            
+            netPost2.changeColor("white");
+            netPost2.moveHorizontal(-40);
+            netPost2.moveVertical(-55);
+            netPost2.changeSize(95);
+            netPost2.makeVisible();
+            
+            topnet1.changeColor("white");
+            topnet1.changeSize(20,60);
+            topnet1.moveHorizontal(-170);
+            topnet1.moveVertical(-55);
+            topnet1.makeVisible();
+           
+            botnet1.changeColor("white");
+            botnet.changeSize(20,60);
+            botnet1.moveHorizontal(-170);
+            botnet1.moveVertical(-55);
+            botnet1.makeVisible();
+            
             drawn = true;
         }
     }
