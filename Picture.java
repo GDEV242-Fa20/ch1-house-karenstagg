@@ -3,7 +3,8 @@
  * the draw method. But wait, there's more: being an electronic picture, it
  * can be changed. You can set it to black-and-white display and back to
  * colors (only after it's been drawn, of course).
- *
+ * The picture is a beach scene with 2 people playing catch, and 1 person 
+ * suntanning themself.  
  * This class was written as an early example for teaching Java with BlueJ.
  * 
  * @author  Karen Stagg
@@ -12,30 +13,21 @@
 public class Picture
 {
     private Square sandLot;
-    private Square sky;
+    private Square sky1;
+    private Square sky2;
     private Square netPost1;
     private Square netPost2;
     private Person player1;
     private Person player2;
     private Circle sun;
     private Circle ball;
-    private Triangle topnet1;
-    private Triangle topnet2;
-    private Triangle topnet3;
-    private Triangle topnet4;
-    private Triangle topnet5;
-    private Triangle topnet6;
-    private Triangle botnet1;
-    private Triangle botnet2;
-    private Triangle botnet3;
-    private Triangle botnet4;
-    private Triangle botnet5;
-    private Triangle botnet6;
-    
-    // private Square window;
-    // private Triangle roof;
-    // private Circle sun;
-    // private boolean drawn;
+    private Triangle bird1;
+    private Triangle bird2;
+    private Triangle bird3;
+    private Square towel1;
+    private Square towel2;
+    private Person suntanner;
+    private boolean drawn;
 
     /**
      * Constructor for objects of class Picture
@@ -43,26 +35,18 @@ public class Picture
     public Picture()
     {
         sandLot = new Square();
-        sky = new Square();
-        netPost1 = new Square();
-        netPost2 = new Square();
+        sky1 = new Square();
+        sky2 = new Square();
         player1 = new Person();
         player2 = new Person();
         ball = new Circle();
-        topnet1 = new Triangle();
-        topnet2 = new Triangle();
-        topnet3 = new Triangle();
-        topnet4 = new Triangle();
-        topnet5 = new Triangle();
-        topnet6 = new Triangle();
-        botnet1 = new Triangle();
-        botnet2 = new Triangle();
-        botnet3 = new Triangle();
-        botnet4 = new Triangle();
-        botnet5 = new Triangle();
-        botnet6 = new Triangle();
-        //roof = new Triangle();  
         sun = new Circle();
+        bird1 = new Triangle();
+        bird2 = new Triangle();
+        bird3 = new Triangle();
+        towel1 = new Square();
+        towel2 = new Square();
+        suntanner = new Person();
         drawn = false;
     }
 
@@ -73,52 +57,80 @@ public class Picture
     {
         if(!drawn) {
             
-            sandlot.moveHorizontal(-320);
+            sandLot.moveHorizontal(-310);
+            sandLot.moveVertical(-20);
             sandLot.changeSize(550);
-            sandlot.changeColor("tan");
+            sandLot.changeColor("tan");
             sandLot.makeVisible();
+                        
+            player1.changeSize(45,25);
+            player1.makeVisible();
             
-            sky.changeColor("skyblue");
-            sky.moveHorizontal(-340);
-            sky.moveVertical(-550);
-            sky.changeSize(550);
-            sky.makeVisible();
+            player2.moveHorizontal(-120);
+            player2.moveVertical(-60);
+            player2.changeSize(40,20);
+            player2.makeVisible();
+            
+            sky1.changeColor("skyblue");
+            sky1.moveHorizontal(-310);
+            sky1.moveVertical(-320);
+            sky1.changeSize(300);
+            sky1.makeVisible();
+            
+            sky2.changeColor("skyblue");
+            sky2.moveHorizontal(-10);
+            sky2.moveVertical(-320);
+            sky2.changeSize(300);
+            sky2.makeVisible();
             
             sun.changeColor("yellow");
-            sun.moveHorizontal(100);
-            sun.moveVertical(-40);
-            sun.changeSize(80);
+            sun.moveHorizontal(130);
+            sun.moveVertical(-80);
+            sun.changeSize(60);
             sun.makeVisible();
             
+            bird1.changeColor("white");
+            bird1.moveVertical(-90);
+            bird1.changeSize(7,21);
+            bird1.makeVisible();
+            
+            bird2.changeColor("white");
+            bird2.moveVertical(-95);
+            bird2.moveHorizontal(-20);
+            bird2.changeSize(7,21);
+            bird2.makeVisible();
+            
+            bird3.changeColor("darkgrey");
+            bird3.moveVertical(-110);
+            bird3.moveHorizontal(-40);
+            bird3.changeSize(9,27);
+            bird3.makeVisible();
+            
+            towel1.changeColor("purple");
+            towel1.moveVertical(30);
+            towel1.moveHorizontal(50);
+            towel1.changeSize(50);
+            towel1.makeVisible();
+            
+            towel2.changeColor("blue");
+            towel2.moveVertical(70);
+            towel2.moveHorizontal(110);
+            towel2.changeSize(50);
+            towel2.makeVisible();
+            
+            suntanner.changeColor("tan");
+            suntanner.changeSize(40,20);
+            suntanner.moveVertical(-25);
+            suntanner.moveHorizontal(100);
+            suntanner.makeVisible();
+            
             ball.changeColor ("magenta");
-            ball.moveHorizontal(15);
-            ball.moveVertical(-130);
+            ball.moveHorizontal(20);
+            ball.moveVertical(20);
             ball.changeSize(18);
             ball.makeVisible();
-            
-            netPost1.changeColor("white");
-            netPost1.moveHorizontal(-165);
-            netPost1.moveVertical(-55);
-            netPost1.changeSize(95);
-            netPost1.makeVisible();
-            
-            netPost2.changeColor("white");
-            netPost2.moveHorizontal(-40);
-            netPost2.moveVertical(-55);
-            netPost2.changeSize(95);
-            netPost2.makeVisible();
-            
-            topnet1.changeColor("white");
-            topnet1.changeSize(20,60);
-            topnet1.moveHorizontal(-170);
-            topnet1.moveVertical(-55);
-            topnet1.makeVisible();
-           
-            botnet1.changeColor("white");
-            botnet.changeSize(20,60);
-            botnet1.moveHorizontal(-170);
-            botnet1.moveVertical(-55);
-            botnet1.makeVisible();
+            ball.slowMoveHorizontal(40);
+            ball.slowMoveVertical(100);
             
             drawn = true;
         }
@@ -129,10 +141,21 @@ public class Picture
      */
     public void setBlackAndWhite()
     {
-        wall.changeColor("black");
-        window.changeColor("white");
-        roof.changeColor("black");
+        sandLot.changeColor("black");
+        sky1.changeColor("white");
+        sky2.changeColor("white");
+        player1.changeColor("white");
+        player2.changeColor("white");
+        ball.changeColor("white");
         sun.changeColor("black");
+        bird1.changeColor("black");
+        bird2.changeColor("black");
+        bird3.changeColor("black");
+        towel1.changeColor("white");
+        towel2.changeColor("white");
+        suntanner.changeColor("black");
+        
+        
     }
 
     /**
@@ -140,9 +163,18 @@ public class Picture
      */
     public void setColor()
     {
-        wall.changeColor("red");
-        window.changeColor("black");
-        roof.changeColor("green");
+        sandLot.changeColor("tan");
+        sky1.changeColor("skyblue");
+        sky2.changeColor("skyblue");
+        player1.changeColor("black");
+        player2.changeColor("black");
+        ball.changeColor("magenta");
         sun.changeColor("yellow");
+        bird1.changeColor("white");
+        bird2.changeColor("white");
+        bird3.changeColor("darkgrey");
+        towel1.changeColor("purple");
+        towel2.changeColor("blue");
+        suntanner.changeColor("tan");
     }
 }

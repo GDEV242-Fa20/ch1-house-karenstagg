@@ -10,8 +10,11 @@ import java.util.*;
  *
  * @author: Bruce Quig
  * @author: Michael Kšlling (mik)
+ * @author: Karen Stagg - adding 4 new colors: skyblue, tan, darkgrey, purple
  *
  * @version 2016.02.29
+ * @version 2020.09.07
+ * 
  */
 public class Canvas
 {
@@ -143,6 +146,18 @@ public class Canvas
         else if(colorString.equals("white")) {
             graphic.setColor(Color.white);
         }
+        else if(colorString.equals("skyblue")) {
+            graphic.setColor(new Color(135,206,235));
+        } 
+        else if(colorString.equals("tan")) {
+            graphic.setColor(new Color(255,204,153));
+        }
+        else if(colorString.equals("darkgrey")) {
+            graphic.setColor(new Color(138,138,138));
+        }  
+        else if(colorString.equals("purple")) {
+            graphic.setColor(new Color(209,153,255));
+        }  
         else {
             graphic.setColor(Color.black);
         }
